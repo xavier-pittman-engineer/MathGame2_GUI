@@ -199,19 +199,27 @@ public class mathGameJFrame extends javax.swing.JFrame  {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         if (answerTextField.getText().equalsIgnoreCase("quit"))//If quit is entered, program quits
            {System.out.println("You ended the session\n");
-            Answered+=0;
-            switch (Operand.getOperator()) {
+            
+           Incorrect.setVisible(false);
+           Correct.setVisible(false);
+
+           
+           Answered+=0;
+           switch (Operand.getOperator()) {
             case 1 -> Operand.setDivide();
             case 2 -> Operand.setMultiply();
             case 3 -> Operand.setAdd();
             case 4 -> Operand.setSubtract();
             default -> {
-                    }//end Default Case
-                }//ends switch Operator
-            }//end if
+                     }//end Default Case
+                 }//ends switch Operator
+             }//end if
         
         else if ((!(answerTextField.getText().equalsIgnoreCase("quit"))) && (!(NumberUtils.isParsable(answerTextField.getText())))){
             System.out.println("Invalid Response\n");        
+            Incorrect.setVisible(false);
+            Correct.setVisible(false);
+
             }//end else if
         
         else if (Integer.parseInt(answerTextField.getText())==answer)
@@ -277,28 +285,33 @@ public class mathGameJFrame extends javax.swing.JFrame  {
        
         if (answerTextField.getText().equalsIgnoreCase("quit"))//If quit is entered, program quits
            {System.out.println("You ended the session\n");
-            Answered+=0;
-            switch (Operand.getOperator()) {
+            
+           Incorrect.setVisible(false);
+           Correct.setVisible(false);
+
+           
+           Answered+=0;
+           switch (Operand.getOperator()) {
             case 1 -> Operand.setDivide();
             case 2 -> Operand.setMultiply();
             case 3 -> Operand.setAdd();
             case 4 -> Operand.setSubtract();
             default -> {
-                    }//end Default Case
-                }//ends switch Operator
-            }//end if
+                     }//end Default Case
+                 }//ends switch Operator
+             }//end if
         
         else if ((!(answerTextField.getText().equalsIgnoreCase("quit"))) && (!(NumberUtils.isParsable(answerTextField.getText())))){
             System.out.println("Invalid Response\n");        
+            Incorrect.setVisible(false);
+            Correct.setVisible(false);
+
             }//end else if
         
         else if (Integer.parseInt(answerTextField.getText())==answer)
             {System.out.println("Correct!\n");
-            //new javax.swing.Timer(delay,Sleep()).start();
             Correct.setVisible(true);
             Incorrect.setVisible(false);
-            
-            
             numCorrect++;
             Answered++;
 
@@ -312,12 +325,12 @@ public class mathGameJFrame extends javax.swing.JFrame  {
                     }//end switch
                 }//End of Operator if. Keeps up with num of correct
 
-        else if (Integer.parseInt(answerTextField.getText())!=answer) 
+        else if (Integer.parseInt(answerTextField.getText())!=answer)
             {System.out.println("Incorrect. The Correct Answer is: "+answer +"\n");
             Incorrect.setVisible(true);
             Correct.setVisible(false);
-            
             Answered++;
+            
             }//end else if
         
         answerTextField.setText("");//Reset Text Box
@@ -325,8 +338,7 @@ public class mathGameJFrame extends javax.swing.JFrame  {
         answer = Operand.workProblem();
         
         displayProblemNumber.setText("Number " + Operand.getProblemNumber());//Displays problem number
-        displayProblem.setText(Operand.getProblem());//Displays + gets problem
-      
+        displayProblem.setText(Operand.getProblem());//Displays + gets problem      
       } 
     }//GEN-LAST:event_answerTextFieldKeyPressed
 
