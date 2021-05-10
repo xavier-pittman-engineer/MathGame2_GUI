@@ -3,7 +3,7 @@ package com.mycompany.mathgame;
     import org.apache.commons.lang3.math.NumberUtils;
     import java.awt.Color; 
     import java.awt.event.KeyEvent;
-    import java.util.Timer;
+    //import java.util.Timer;
 
 public class mathGameJFrame extends javax.swing.JFrame  {
 
@@ -14,7 +14,7 @@ public class mathGameJFrame extends javax.swing.JFrame  {
     String quitRaw="go"; //Variable used to exit Loops
     
     ProblemType Operand = new ProblemType();
-    Timer timer = new Timer();
+    //Timer timer = new Timer();
     
    
     public mathGameJFrame() {
@@ -295,8 +295,8 @@ public class mathGameJFrame extends javax.swing.JFrame  {
         else if (Integer.parseInt(answerTextField.getText())==answer)
             {System.out.println("Correct!\n");
             //new javax.swing.Timer(delay,Sleep()).start();
-            //Correct.setVisible(true);
-            //Incorrect.setVisible(false);
+            Correct.setVisible(true);
+            Incorrect.setVisible(false);
             
             
             numCorrect++;
@@ -327,9 +327,6 @@ public class mathGameJFrame extends javax.swing.JFrame  {
         displayProblemNumber.setText("Number " + Operand.getProblemNumber());//Displays problem number
         displayProblem.setText(Operand.getProblem());//Displays + gets problem
       
-          
-        Incorrect.setVisible(false);
-        Correct.setVisible(false);
       } 
     }//GEN-LAST:event_answerTextFieldKeyPressed
 
