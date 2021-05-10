@@ -4,9 +4,8 @@ package com.mycompany.mathgame;
 
 public class ProblemType {
     
-    
     NumberFormat percent = NumberFormat.getPercentInstance();
-    
+
     int Operator,num1,num2;
     int problem = 0;
     int divide=0, multiply=0, add=0, subtract=0;
@@ -14,7 +13,6 @@ public class ProblemType {
     int bigNum;
     String strProblem;
   
-    
     public String getProblem(){
         return strProblem;
     }
@@ -95,38 +93,41 @@ public class ProblemType {
     public int Select (int choice, int num1, int num2){
         switch(choice){
             
-            case(1): bigNum = num1 * num2;
-                     System.out.println("Divdide or type quit to quit");
-                     answer=num2;
-                     divide++;
-                     strProblem = (bigNum +" /" +num1 + " = ");
+            case(1) -> {
+                bigNum = num1 * num2;
+                //System.out.println("Divdide or type quit to quit");
+                answer=num2;
+                divide++;
+                strProblem = (bigNum +" /" +num1 + " = ");
+            }
                      
-                     break;
-                     
-            case(2): System.out.println("Multiply or type quit to quit"); 
-                     answer=num1*num2;
-                     multiply++;
-                     //System.out.print(+answer);
-					 strProblem = (num1 +" * " +num2 + " = ");
-                     break;
+            case(2) -> {
+                //System.out.println("Multiply or type quit to quit");
+                answer=num1*num2;
+                multiply++;
+                //System.out.print(+answer);
+                strProblem = (num1 +" * " +num2 + " = ");
+            }
                 
-            case(3): System.out.println("Add or type quit to quit");
-                     answer=num1+num2;
-                     add++;
-                     //System.out.print(+answer);
-                     strProblem = (num1 +" + " +num2 + " = ");
-					 break;
+            case(3) -> {
+                //System.out.println("Add or type quit to quit");
+                answer=num1+num2;
+                add++;
+                //System.out.print(+answer);
+                strProblem = (num1 +" + " +num2 + " = ");
+            }
             
-            case(4): bigNum = num1 + num2;
-                     System.out.println("Subtract or type quit to quit"); 
-                     answer=num2;
-                     strProblem = (bigNum +" - " +num1 + " = ");
-                     subtract++;
-                     //System.out.print(+answer);
-                     break;
+            case(4) -> {
+                //System.out.println("Subtract or type quit to quit");
+                bigNum = num1 + num2;
+                answer=num2;
+                strProblem = (bigNum +" - " +num1 + " = ");
+                subtract++;
+                //System.out.print(+answer);
+            }
               
-            default: System.out.print("No operation has been chosen") ; 
-                     break;}//End Of Switch
+            default -> System.out.print("No operation has been chosen") ; 
+}//End Of Switch
         
         problem+=1;//Keeps up with problem number
         

@@ -15,7 +15,7 @@ public class Listing
 
    public String toString( )
    {
-      return( "The problem " + name);
+      return(name);
    }  // End of toString
 
 
