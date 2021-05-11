@@ -215,7 +215,6 @@ public class mathGameJFrame extends javax.swing.JFrame  {
            Incorrect.setVisible(false);
            Correct.setVisible(false);
            //Operand.showAllProblems();
-
            
            Answered+=0;
            switch (Operand.getOperator()) {
@@ -350,6 +349,7 @@ public class mathGameJFrame extends javax.swing.JFrame  {
             Correct.setVisible(false);
             Answered++;
             
+
             strProblem = Operand.getProblem() + " " + answerTextField.getText();//Prep for Listing
 
             HoldProblems.setName(strProblem);//Listing
