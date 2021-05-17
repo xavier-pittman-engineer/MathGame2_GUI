@@ -14,7 +14,7 @@ public class mathGameJFrame extends javax.swing.JFrame  {
     String quitRaw="go"; //Variable used to exit Loops
     String strProblem;
     
-    SinglyLinkedList StoreProblems = new SinglyLinkedList();
+    public SinglyLinkedList StoreProblems = new SinglyLinkedList();
     Listing HoldProblems = new Listing (strProblem);
 
     
@@ -301,7 +301,7 @@ public class mathGameJFrame extends javax.swing.JFrame  {
            Incorrect.setVisible(false);
            Correct.setVisible(false);
 
-           showAllProblems();
+           //showAllProblems();
            
            Answered+=0;
            switch (Operand.getOperator()) {
@@ -318,17 +318,27 @@ public class mathGameJFrame extends javax.swing.JFrame  {
             System.out.println("Invalid Response\n");        
             Incorrect.setVisible(false);
             Correct.setVisible(false);
+            
+           Answered+=0;
+           switch (Operand.getOperator()) {
+            case 1 -> Operand.setDivide();
+            case 2 -> Operand.setMultiply();
+            case 3 -> Operand.setAdd();
+            case 4 -> Operand.setSubtract();
+            default -> {
+                     }//end Default Case
+                 }//ends switch Operator            
 
             }//end else if
         
         else if (Integer.parseInt(answerTextField.getText())==answer)
-            {System.out.println("Correct!\n");
+            {//System.out.println("Correct!\n");
             Correct.setVisible(true);
             Incorrect.setVisible(false);
             numCorrect++;
             Answered++;
             
-            strProblem = Operand.getProblem() + " " + answerTextField.getText();//Prep for Listing
+            strProblem = Operand.getProblem() + " " + answerTextField.getText() + " Correct!";//Prep for Listing
 
             HoldProblems.setName(strProblem);//Listing
             StoreProblems.insert(HoldProblems);//Stores Listing
@@ -344,13 +354,13 @@ public class mathGameJFrame extends javax.swing.JFrame  {
                 }//End of Operator if. Keeps up with num of correct
 
         else if (Integer.parseInt(answerTextField.getText())!=answer)
-            {System.out.println("Incorrect. The Correct Answer is: "+answer +"\n");
+            {//System.out.println("Incorrect. The Correct Answer is: "+answer +"\n");
             Incorrect.setVisible(true);
             Correct.setVisible(false);
             Answered++;
             
 
-            strProblem = Operand.getProblem() + " " + answerTextField.getText();//Prep for Listing
+            strProblem = Operand.getProblem() + " " + answerTextField.getText() + " Incorrect ";//Prep for Listing
 
             HoldProblems.setName(strProblem);//Listing
             StoreProblems.insert(HoldProblems);//Stores Listing
@@ -373,7 +383,11 @@ public class mathGameJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void Stats_ScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stats_ScoreActionPerformed
-        // TODO add your handling code here:
+        ResultsJFrame results = new ResultsJFrame();
+        results.sendResults(StoreProblems);
+        results.show();
+        
+        
     }//GEN-LAST:event_Stats_ScoreActionPerformed
 
     /**

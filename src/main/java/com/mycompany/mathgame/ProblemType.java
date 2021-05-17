@@ -21,16 +21,24 @@ public class ProblemType {
     }
     
     public void setDivide(){
-        divide=divide-1;}
+        divide=divide-1;
+        problem-=1;
+    }
     
     public void setMultiply(){
-        multiply=multiply-1;}
+        multiply=multiply-1;
+        problem-=1;
+    }
     
     public void setAdd(){
-        add=add-1;}
+        add=add-1;
+        problem-=1;
+    }
     
     public void setSubtract(){
-        subtract=subtract-1;}
+        subtract=subtract-1;
+        problem-=1;
+    }
     
     public String retTotal(int answered, int answeredright){
         String Score =  percent.format((double)answeredright/(double)answered);
@@ -98,7 +106,7 @@ public class ProblemType {
                 //System.out.println("Divdide or type quit to quit");
                 answer=num2;
                 divide++;
-                strProblem = (bigNum +" /" +num1 + " = ");
+                strProblem = (bigNum +" / " +num1 + " = ");
             }
                      
             case(2) -> {

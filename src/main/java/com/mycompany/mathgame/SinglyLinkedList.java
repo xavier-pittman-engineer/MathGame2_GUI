@@ -87,8 +87,22 @@ public class SinglyLinkedList {
          p = p.next;
       }  // End of while
    }  // End of showAll
+   
+      public String makeAllString( )
+   {
+      Node p = h.next;
 
-
+      String problemsString = "These were the problems worked. \n";
+      
+      while( p != null )   // Continue to traverse the list.
+      {
+         problemsString = problemsString.concat( p.l.toString( )+ " \n");
+         //System.out.println(problemsString);
+         p = p.next;
+      }  // End of while
+      
+      return (problemsString);
+   }  // End of showAll
    public class Node
    {
       private Listing l;
